@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #333;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Центрирование по вертикали */
+            font-size: 20px; /* Увеличение размера шрифта */
+        }
+
+        .container {
+            max-width: 600px; /* Увеличение максимальной ширины контейнера */
+            padding: 40px; /* Увеличение отступов */
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px; /* Увеличение радиуса скругления углов */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            opacity: 0; /* Скрываем содержимое до завершения анимации появления */
+            transform: translateY(20px); /* Начальное смещение по вертикали */
+            animation: slideIn 1s forwards, fadeIn 1s forwards; /* Анимации появления и слайда вниз */
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Стили для кнопки "Назад" */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 999;
+            width: 50px; /* Размер кнопки */
+            height: 50px; /* Размер кнопки */
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none; /* Убираем подчеркивание */
+            transition: transform 0.3s ease; /* Плавное изменение размера при наведении */
+        }
+
+        .back-btn i {
+            font-size: 24px; /* Размер иконки */
+            color: #007bff;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1); /* Немного увеличиваем при наведении */
+        }
+
+        /* Стили для кнопки переключения языка */
+        .lang-toggle {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            cursor: pointer;
+            z-index: 9999;
+            width: 70px;
+            height: 70px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease, opacity 1s ease;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .lang-toggle i {
+            font-size: 36px;
+            color: #007bff;
+            transition: transform 0.3s ease;
+        }
+
+        .lang-toggle:hover {
+            transform: scale(1.1);
+            width: 75px;
+            height: 75px;
+        }
+
+        /* Добавляем анимацию для кнопки переключения языка только при загрузке */
+        .lang-toggle.animating:hover {
+            transform: scale(1.1);
+            width: 75px;
+            height: 75px;
+        }
+
+        /* Скрываем анимацию вращения для иконки при наведении */
+        .lang-toggle i:hover {
+            transform: none;
+        }
+
+        /* Плавный переход для текста */
+        [data-lang], [data-lang-en] {
+            transition: opacity 0.5s ease;
+            opacity: 1;
+        }
+
+        [data-lang]:not([data-lang-en]), [data-lang-en]:not([data-lang]) {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+    <h1 data-lang="Обо мне" data-lang-en="About Me">Обо мне</h1>
+    <p data-lang="Привет, меня зовут Глеб Газаков. В данный момент я занимаюсь и увлекаюсь программированием. Я владею следующими языками: Python, JavaScript, Java, C++, C#, PHP, HTML/CSS." data-lang-en="Hello, my name is Gleb Gazakov. Currently, I am engaged in and passionate about programming. I am proficient in the following languages: Python, JavaScript, Java, C++, C#, PHP, HTML/CSS.">Привет, меня зовут Глеб Газаков. В данный момент я занимаюсь и увлекаюсь программированием. Я владею следующими языками: Python, JavaScript, Java, C++, C#, PHP, HTML/CSS.</p>
+    <p data-lang="Также я занимаюсь информационной безопасностью (интернет не анонимен), всегда готов помочь вам ответить на любые вопросы по этой теме, и по теме программирования." data-lang-en="I am also engaged in cybersecurity (the Internet is not anonymous), always ready to help you answer any questions on this topic, and on the topic of programming.">Также я занимаюсь информационной безопасностью (интернет не анонимен), всегда готов помочь вам ответить на любые вопросы по этой теме, и по теме программирования.</p>
+    <p data-lang="Свободно разговариваю на английском языке. Я также увлекаюсь чтением книг, от литературы до философии." data-lang-en="I am fluent in Russian. I am also passionate about reading books, from literature to philosophy.">Свободно разговариваю на английском языке. Я также увлекаюсь чтением книг, от литературы до философии.</p>
+    <p data-lang="О себе больше сказать не могу, спасибо за прочтение <3" data-lang-en="That's all I can say about myself. Thank you for reading <3">О себе больше сказать не могу, спасибо за прочтение <3</p>
+</div>
+
+<!-- Кнопка переключения языка -->
+<div class="lang-toggle" onclick="toggleLanguage()"><i class="fas fa-language"></i></div>
+
+<!-- Скрипт для переключения языка -->
+<script>
+    function toggleLanguage() {
+        var currentLang = document.documentElement.lang;
+        var elementsToTranslate = document.querySelectorAll('[data-lang], [data-lang-en]');
+
+        if (currentLang === 'en') {
+            document.documentElement.lang = 'ru';
+            elementsToTranslate.forEach(function(element) {
+                element.style.opacity = '0';
+                setTimeout(function() {
+                    element.innerText = element.getAttribute('data-lang');
+                    element.style.opacity = '1';
+                }, 500); // Задержка для плавного перехода
+            });
+        } else {
+            document.documentElement.lang = 'en';
+            elementsToTranslate.forEach(function(element) {
+                element.style.opacity = '0';
+                setTimeout(function() {
+                    element.innerText = element.getAttribute('data-lang-en');
+                    element.style.opacity = '1';
+                }, 500); // Задержка для плавного перехода
+            });
+        }
+    }
+
+    // Появление кнопки переключения языка
+    window.addEventListener('DOMContentLoaded', function() {
+        var langToggle = document.querySelector('.lang-toggle');
+        langToggle.style.opacity = '1'; // Показываем кнопку
+    });
+</script>
+
+</body>
+</html>
