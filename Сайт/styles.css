@@ -1,0 +1,46 @@
+.container {
+    max-width: 800px; /* Увеличение максимальной ширины контейнера */
+    padding: 60px; /* Увеличение отступов */
+    font-size: 24px; /* Увеличение размера шрифта */
+}
+
+.bio {
+    font-size: 28px; /* Увеличение размера шрифта в блоке биографии */
+    margin-bottom: 60px; /* Увеличение отступа после блока биографии */
+}
+
+.social-links a {
+    font-size: 100px; /* Увеличение размера иконок социальных ссылок */
+    margin: 0 40px; /* Увеличение отступов между иконками */
+}
+
+.lang-toggle {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    cursor: pointer;
+    z-index: 9999;
+    width: 70px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease, opacity 1s ease;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.lang-toggle i {
+    font-size: 36px;
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+.lang-toggle:hover {
+    transform: scale(1.1);
+    width: 75px;
+    height: 75px;
+}
