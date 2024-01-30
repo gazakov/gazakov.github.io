@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя биография</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #333;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 20px;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.jpg');
+            background-size: cover;
+            pointer-events: none;
+            z-index: -1;
+            transition: transform 0.3s ease;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 1s forwards, fadeIn 1s forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .header img {
+            border-radius: 50%;
+            margin-bottom: 40px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .name {
+            font-size: 36px;
+            color: #800080;
+            margin-bottom: 20px;
+            transition: opacity 0.5s ease;
+        }
+
+        .bio {
+            font-size: 24px;
+            margin-bottom: 40px;
+            transition: opacity 0.5s ease;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .social-links a {
+            font-size: 80px;
+            color: #007bff;
+            margin: 0 30px;
+        }
+
+        .lang-toggle {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            cursor: pointer;
+            z-index: 9999;
+            width: 70px;
+            height: 70px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease, opacity 1s ease;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .lang-toggle i {
+            font-size: 36px;
+            color: #007bff;
+            transition: transform 0.3s ease;
+        }
+
+        .lang-toggle:hover {
+            transform: scale(1.1);
+            width: 75px;
+            height: 75px;
+        }
+
+        .social-links a i {
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover i {
+            transform: scale(1.2);
+        }
+
+        .info-btn {
+            font-size: 80px;
+            color: #007bff;
+            margin: 0 30px;
+        }
+
+        .info-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .info-btn:hover i {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+    <div class="header">
+        <img src="https://sun9-60.userapi.com/impg/a5RkF1a4GbhlA9c1UunnX9NJZxukhPGtjn1dnQ/OsXoKCEmaDU.jpg?size=491x600&quality=96&sign=ef2e57eed71834795e5e562967150902&type=album" alt="Profile Picture">
+        <div class="name" data-lang="Глеб Газаков" data-lang-en="Gleb Gazakov">Глеб Газаков</div>
+        <div class="bio" data-lang="Привет! Я увлекаюсь программированием, кибер-безопасностью. Увлекаюсь философией и чтением литературы. Всегда рад общению!" data-lang-en="Hello! I am passionate about programming, cyber-security. My hobby is philosophy and reading literature. I always open to communication!">Привет! Я увлекаюсь программированием, кибер-безопасностью. Увлекаюсь философией и чтением литературы. Всегда рад общению!</div>
+    </div>
+
+    <div class="social-links">
+        <a href="https://t.me/wonderfulworldseen" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="about_me.html" class="info-btn"><i class="fas fa-info-circle"></i></a>
+    </div>
+</div>
+
+<div class="lang-toggle" onclick="toggleLanguage()"><i class="fas fa-language"></i></div>
+
+<script>
+    function toggleLanguage() {
+        var currentLang = document.documentElement.lang;
+        var elementsToTranslate = document.querySelectorAll('[data-lang]');
+
+        if (currentLang === 'en') {
+            document.documentElement.lang = 'ru';
+            elementsToTranslate.forEach(function(element) {
+                element.style.opacity = '0';
+                setTimeout(function() {
+                    element.innerText = element.getAttribute('data-lang');
+                    element.style.opacity = '1';
+                }, 500);
+            });
+        } else {
+            document.documentElement.lang = 'en';
+            elementsToTranslate.forEach(function(element) {
+                element.style.opacity = '0';
+                setTimeout(function() {
+                    element.innerText = element.getAttribute('data-lang-en');
+                    element.style.opacity = '1';
+                }, 500);
+            });
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+        var langToggle = document.querySelector('.lang-toggle');
+        langToggle.style.opacity = '1';
+    });
+</script>
+
+</body>
+</html>
