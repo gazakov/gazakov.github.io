@@ -106,7 +106,7 @@
         .lang-toggle {
             position: fixed;
             bottom: 40px;
-            right: 40px;
+            left: 40px;
             cursor: pointer;
             z-index: 9999;
             width: 70px;
@@ -129,6 +129,13 @@
         }
 
         .lang-toggle:hover {
+            transform: scale(1.1);
+            width: 75px;
+            height: 75px;
+        }
+
+        /* Добавляем анимацию для кнопки переключения языка только при загрузке */
+        .lang-toggle.animating:hover {
             transform: scale(1.1);
             width: 75px;
             height: 75px;
@@ -175,30 +182,25 @@
 
             .name {
                 font-size: 24px; /* Уменьшаем размер имени */
-                margin-bottom: 5px; /* Уменьшаем отступ после имени */
+                margin-bottom: 10px; /* Уменьшаем отступ после имени */
             }
 
             .bio {
-                font-size: 16px; /* Уменьшаем размер биографии */
-                margin-bottom: 10px; /* Уменьшаем отступ после биографии */
+                font-size: 18px; /* Уменьшаем размер текста биографии */
+                margin-bottom: 20px; /* Уменьшаем отступ после биографии */
             }
 
-            .social-links a {
-                font-size: 40px; /* Уменьшаем размер иконок социальных ссылок */
-                margin: 0 10px; /* Уменьшаем отступы между иконками */
-            }
-
-            .info-btn {
-                font-size: 40px; /* Уменьшаем размер иконки информационной кнопки */
-                margin: 0 10px; /* Уменьшаем отступы между кнопками */
-            }
-
-            .container p:last-child {
-                margin-bottom: 50px; /* Увеличиваем отступ снизу, чтобы не перекрывалась кнопка перевода */
+            .social-links {
+                margin-bottom: 20px; /* Уменьшаем отступ между социальными ссылками и кнопкой перевода */
             }
 
             .lang-toggle {
-                right: 20px; /* Смещаем кнопку перевода вправо на мобильных устройствах */
+                bottom: 20px; /* Смещаем кнопку перевода вверх */
+                left: 20px; /* Смещаем кнопку перевода вправо */
+            }
+
+            .container p:last-child {
+                margin-bottom: 70px; /* Увеличиваем отступ снизу, чтобы не перекрывалась кнопка перевода */
             }
         }
     </style>
