@@ -13,12 +13,12 @@
             background: linear-gradient(to right, #ff9a9e, #fad0c4);
             color: #333;
             position: relative;
-            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             font-size: 20px;
+            overflow: hidden; /* Отключаем прокрутку на всех устройствах */
         }
 
         .background {
@@ -102,12 +102,17 @@
             font-size: 60px;
             color: #007bff;
             margin: 0 20px;
+            transition: transform 0.3s ease; /* Добавляем анимацию при наведении */
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2); /* Увеличиваем размер иконки при наведении */
         }
 
         .lang-toggle {
             position: fixed;
             bottom: 40px;
-            right: 40px; /* Положение кнопки перевода */
+            left: 40px; /* Положение кнопки перевода */
             cursor: pointer;
             z-index: 9999;
             width: 70px;
@@ -142,52 +147,25 @@
             height: 75px;
         }
 
-        .info-btn {
-            font-size: 80px;
-            color: #007bff;
-            margin: 0 30px;
-        }
-
-        .info-btn i {
-            transition: transform 0.3s ease;
-        }
-
-        .info-btn:hover i {
-            transform: scale(1.2);
+        /* Скрываем анимацию вращения для иконки при наведении */
+        .lang-toggle i:hover {
+            transform: none;
         }
 
         /* Медиа-запрос для мобильных устройств */
         @media (max-width: 768px) {
-            body {
-                overflow: hidden; /* Отключаем скролл на мобильных устройствах */
-            }
-
             .container {
-                width: calc(100% - 20px);
-                padding: 10px;
-            }
-
-            .name {
-                font-size: 24px;
-                margin-bottom: 10px;
-            }
-
-            .bio {
-                font-size: 18px;
-                margin-bottom: 20px;
-            }
-
-            .social-links {
-                margin-bottom: 20px;
+                max-width: calc(100% - 20px); /* Уменьшаем максимальную ширину контейнера */
+                padding: 10px; /* Уменьшаем отступы */
             }
 
             .lang-toggle {
-                bottom: 20px;
-                right: 20px; /* Изменяем положение кнопки на право */
+                left: 20px; /* Смещаем кнопку перевода влево */
             }
 
-            .container p:last-child {
-                margin-bottom: 70px;
+            .social-links a {
+                font-size: 50px; /* Уменьшаем размер иконок социальных сетей */
+                margin: 0 15px; /* Уменьшаем отступы между иконками */
             }
         }
     </style>
