@@ -35,8 +35,8 @@
         }
 
         .container {
-            max-width: 600px;
-            padding: 40px;
+            max-width: 400px; /* Уменьшаем максимальную ширину контейнера */
+            padding: 20px; /* Уменьшаем отступы */
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -71,24 +71,24 @@
 
         .header img {
             border-radius: 50%;
-            margin-bottom: 40px;
-            width: 200px;
-            height: 200px;
+            margin-bottom: 20px; /* Уменьшаем отступ снизу для изображения профиля */
+            width: 150px; /* Уменьшаем размер изображения профиля */
+            height: 150px;
             object-fit: cover;
-            border: 5px solid #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border: 3px solid #fff; /* Уменьшаем толщину рамки */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Уменьшаем тень */
         }
 
         .name {
-            font-size: 36px;
+            font-size: 24px; /* Уменьшаем размер имени */
             color: #800080;
             margin-bottom: 10px;
             transition: opacity 0.5s ease;
         }
 
         .bio {
-            font-size: 24px;
-            margin-bottom: 40px;
+            font-size: 16px; /* Уменьшаем размер текста биографии */
+            margin-bottom: 20px;
             transition: opacity 0.5s ease;
         }
 
@@ -99,9 +99,9 @@
         }
 
         .social-links a {
-            font-size: 60px;
+            font-size: 40px; /* Уменьшаем размер иконок социальных сетей */
             color: #007bff;
-            margin: 0 20px;
+            margin: 0 10px; /* Уменьшаем отступы между иконками */
             transition: transform 0.3s ease; /* Добавляем анимацию при наведении */
         }
 
@@ -112,7 +112,7 @@
         .lang-toggle {
             position: fixed;
             bottom: 40px;
-            left: 40px; /* Положение кнопки перевода */
+            left: 20px; /* Положение кнопки перевода */
             cursor: pointer;
             z-index: 9999;
             width: 70px;
@@ -159,13 +159,29 @@
                 padding: 10px; /* Уменьшаем отступы */
             }
 
-            .lang-toggle {
-                left: 20px; /* Смещаем кнопку перевода влево */
+            .header img {
+                width: 120px; /* Уменьшаем размер изображения профиля */
+                height: 120px;
+                margin-bottom: 10px; /* Уменьшаем отступ снизу для изображения профиля */
+            }
+
+            .name {
+                font-size: 20px; /* Уменьшаем размер имени */
+                margin-bottom: 5px; /* Уменьшаем отступ снизу для имени */
+            }
+
+            .bio {
+                font-size: 14px; /* Уменьшаем размер текста биографии */
+                margin-bottom: 10px; /* Уменьшаем отступ снизу для текста биографии */
             }
 
             .social-links a {
-                font-size: 50px; /* Уменьшаем размер иконок социальных сетей */
-                margin: 0 15px; /* Уменьшаем отступы между иконками */
+                font-size: 30px; /* Уменьшаем размер иконок социальных сетей */
+                margin: 0 5px; /* Уменьшаем отступы между иконками */
+            }
+
+            .lang-toggle {
+                left: 20px; /* Положение кнопки перевода */
             }
         }
     </style>
