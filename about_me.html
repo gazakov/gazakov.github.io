@@ -86,8 +86,8 @@
         /* Стили для кнопки переключения языка */
         .lang-toggle {
             position: fixed;
-            bottom: 40px;
-            left: 40px;
+            bottom: 20px; /* Смещаем кнопку вверх */
+            left: 20px; /* Смещаем кнопку вправо */
             cursor: pointer;
             z-index: 9999;
             width: 70px;
@@ -141,7 +141,12 @@
         @media (max-width: 768px) {
             .container {
                 max-width: 90%; /* Уменьшаем максимальную ширину контейнера */
-                padding: 20px; /* Уменьшаем отступы */
+                padding: 10px; /* Уменьшаем отступы */
+            }
+
+            .lang-toggle {
+                bottom: 20px; /* Смещаем кнопку вверх */
+                left: 20px; /* Смещаем кнопку вправо */
             }
         }
     </style>
