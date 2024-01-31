@@ -106,7 +106,7 @@
         .lang-toggle {
             position: fixed;
             bottom: 40px;
-            left: 40px;
+            right: 40px;
             cursor: pointer;
             z-index: 9999;
             width: 70px;
@@ -158,6 +158,10 @@
 
         /* Медиа-запрос для мобильных устройств */
         @media (max-width: 768px) {
+            body {
+                overflow: hidden; /* Отключаем скролл на мобильных устройствах */
+            }
+
             .container {
                 width: calc(100% - 20px); /* Уменьшаем ширину контейнера на мобильных устройствах */
                 padding: 10px; /* Уменьшаем отступы */
@@ -191,6 +195,10 @@
 
             .container p:last-child {
                 margin-bottom: 50px; /* Увеличиваем отступ снизу, чтобы не перекрывалась кнопка перевода */
+            }
+
+            .lang-toggle {
+                right: 20px; /* Смещаем кнопку перевода вправо на мобильных устройствах */
             }
         }
     </style>
