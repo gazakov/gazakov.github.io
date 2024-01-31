@@ -71,37 +71,37 @@
 
         .header img {
             border-radius: 50%;
-            margin-bottom: 40px;
-            width: 200px;
-            height: 200px;
+            margin-bottom: 20px; /* Уменьшаем отступ до биографии */
+            width: 150px; /* Уменьшаем размер изображения */
+            height: 150px;
             object-fit: cover;
             border: 5px solid #fff;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         .name {
-            font-size: 36px;
+            font-size: 30px; /* Уменьшаем размер имени */
             color: #800080;
-            margin-bottom: 20px;
+            margin-bottom: 10px; /* Уменьшаем отступ после имени */
             transition: opacity 0.5s ease;
         }
 
         .bio {
-            font-size: 24px;
-            margin-bottom: 40px;
+            font-size: 18px; /* Уменьшаем размер биографии */
+            margin-bottom: 20px; /* Уменьшаем отступ после биографии */
             transition: opacity 0.5s ease;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px; /* Уменьшаем отступ после социальных ссылок */
         }
 
         .social-links a {
-            font-size: 80px;
+            font-size: 50px; /* Уменьшаем размер иконок социальных ссылок */
             color: #007bff;
-            margin: 0 30px;
+            margin: 0 20px; /* Уменьшаем отступы между иконками */
         }
 
         .lang-toggle {
@@ -144,9 +144,9 @@
         }
 
         .info-btn {
-            font-size: 80px;
+            font-size: 50px; /* Уменьшаем размер иконки информационной кнопки */
             color: #007bff;
-            margin: 0 30px;
+            margin: 0 20px; /* Уменьшаем отступы между кнопками */
         }
 
         .info-btn i {
@@ -160,28 +160,37 @@
         /* Медиа-запрос для мобильных устройств */
         @media (max-width: 768px) {
             .container {
-                width: 90%; /* Уменьшаем ширину контейнера на мобильных устройствах */
-                padding: 10px; /* Уменьшаем внутренние отступы */
+                width: 95%; /* Уменьшаем ширину контейнера на мобильных устройствах */
+            }
+
+            .header img {
+                width: 120px; /* Уменьшаем размер изображения */
+                height: 120px;
+                margin-bottom: 10px; /* Уменьшаем отступ до биографии */
+            }
+
+            .name {
+                font-size: 24px; /* Уменьшаем размер имени */
+                margin-bottom: 5px; /* Уменьшаем отступ после имени */
+            }
+
+            .bio {
+                font-size: 16px; /* Уменьшаем размер биографии */
+                margin-bottom: 10px; /* Уменьшаем отступ после биографии */
             }
 
             .social-links a {
-                font-size: 60px; /* Уменьшаем размер иконок социальных ссылок на мобильных устройствах */
-                margin: 0 20px; /* Уменьшаем отступы между иконками */
+                font-size: 40px; /* Уменьшаем размер иконок социальных ссылок */
+                margin: 0 10px; /* Уменьшаем отступы между иконками */
             }
 
-            .lang-toggle {
-                width: 60px; /* Уменьшаем размер кнопки перевода */
-                height: 60px;
-                bottom: 10px; /* Смещаем кнопку вверх */
-                left: 10px; /* Смещаем кнопку вправо */
+            .info-btn {
+                font-size: 40px; /* Уменьшаем размер иконки информационной кнопки */
+                margin: 0 10px; /* Уменьшаем отступы между кнопками */
             }
 
-            .lang-toggle i {
-                font-size: 24px; /* Уменьшаем размер иконки на кнопке перевода */
-            }
-            
-            .container {
-                padding: 20px;
+            .container p:last-child {
+                margin-bottom: 50px; /* Увеличиваем отступ снизу, чтобы не перекрывалась кнопка перевода */
             }
         }
     </style>
