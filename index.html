@@ -46,6 +46,7 @@
             opacity: 0;
             transform: translateY(20px);
             animation: slideIn 1s forwards, fadeIn 1s forwards;
+            margin-bottom: 20px; /* Новый стиль: уменьшаем отступ снизу */
         }
 
         @keyframes slideIn {
@@ -81,7 +82,7 @@
         .name {
             font-size: 36px;
             color: #800080;
-            margin-bottom: 10px; /* Уменьшаем отступ после имени */
+            margin-bottom: 10px;
             transition: opacity 0.5s ease;
         }
 
@@ -94,13 +95,13 @@
         .social-links {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px; /* Уменьшаем отступ между социальными ссылками и кнопкой перевода */
+            margin-bottom: 20px;
         }
 
         .social-links a {
-            font-size: 60px; /* Уменьшаем размер иконок социальных сетей */
+            font-size: 60px;
             color: #007bff;
-            margin: 0 20px; /* Уменьшаем отступ между иконками */
+            margin: 0 20px;
         }
 
         .lang-toggle {
@@ -162,31 +163,31 @@
             }
 
             .container {
-                width: calc(100% - 20px); /* Уменьшаем ширину контейнера на мобильных устройствах */
-                padding: 10px; /* Уменьшаем отступы */
+                width: calc(100% - 20px);
+                padding: 10px;
             }
 
             .name {
-                font-size: 24px; /* Уменьшаем размер имени */
-                margin-bottom: 10px; /* Уменьшаем отступ после имени */
+                font-size: 24px;
+                margin-bottom: 10px;
             }
 
             .bio {
-                font-size: 18px; /* Уменьшаем размер текста биографии */
-                margin-bottom: 20px; /* Уменьшаем отступ после биографии */
+                font-size: 18px;
+                margin-bottom: 20px;
             }
 
             .social-links {
-                margin-bottom: 20px; /* Уменьшаем отступ между социальными ссылками и кнопкой перевода */
+                margin-bottom: 20px;
             }
 
             .lang-toggle {
-                bottom: 20px; /* Смещаем кнопку перевода вверх */
-                left: 20px; /* Смещаем кнопку перевода вправо */
+                bottom: 20px;
+                right: 20px; /* Изменяем положение кнопки на право */
             }
 
             .container p:last-child {
-                margin-bottom: 70px; /* Увеличиваем отступ снизу, чтобы не перекрывалась кнопка перевода */
+                margin-bottom: 70px;
             }
         }
     </style>
