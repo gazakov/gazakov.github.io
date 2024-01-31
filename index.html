@@ -35,9 +35,8 @@
         }
 
         .container {
-            width: 90%;
-            margin: auto;
-            padding: 20px;
+            max-width: 600px;
+            padding: 40px;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -71,37 +70,37 @@
 
         .header img {
             border-radius: 50%;
-            margin-bottom: 20px; /* Уменьшаем отступ до биографии */
-            width: 150px; /* Уменьшаем размер изображения */
-            height: 150px;
+            margin-bottom: 40px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
             border: 5px solid #fff;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         .name {
-            font-size: 30px; /* Уменьшаем размер имени */
+            font-size: 36px;
             color: #800080;
-            margin-bottom: 10px; /* Уменьшаем отступ после имени */
+            margin-bottom: 20px;
             transition: opacity 0.5s ease;
         }
 
         .bio {
-            font-size: 18px; /* Уменьшаем размер биографии */
-            margin-bottom: 20px; /* Уменьшаем отступ после биографии */
+            font-size: 24px;
+            margin-bottom: 40px;
             transition: opacity 0.5s ease;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px; /* Уменьшаем отступ после социальных ссылок */
+            margin-bottom: 40px;
         }
 
         .social-links a {
-            font-size: 50px; /* Уменьшаем размер иконок социальных ссылок */
+            font-size: 80px;
             color: #007bff;
-            margin: 0 20px; /* Уменьшаем отступы между иконками */
+            margin: 0 30px;
         }
 
         .lang-toggle {
@@ -144,9 +143,9 @@
         }
 
         .info-btn {
-            font-size: 50px; /* Уменьшаем размер иконки информационной кнопки */
+            font-size: 80px;
             color: #007bff;
-            margin: 0 20px; /* Уменьшаем отступы между кнопками */
+            margin: 0 30px;
         }
 
         .info-btn i {
@@ -160,7 +159,8 @@
         /* Медиа-запрос для мобильных устройств */
         @media (max-width: 768px) {
             .container {
-                width: 95%; /* Уменьшаем ширину контейнера на мобильных устройствах */
+                width: calc(100% - 20px); /* Уменьшаем ширину контейнера на мобильных устройствах */
+                padding: 10px; /* Уменьшаем отступы */
             }
 
             .header img {
