@@ -35,8 +35,9 @@
         }
 
         .container {
-            max-width: 600px;
-            padding: 40px;
+            width: 90%;
+            margin: auto;
+            padding: 20px;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -159,25 +160,8 @@
         /* Медиа-запрос для мобильных устройств */
         @media (max-width: 768px) {
             .container {
-                max-width: calc(100% - 20px); /* Уменьшаем максимальную ширину контейнера */
-                padding: 10px; /* Уменьшаем отступы */
-            }
-
-            .lang-toggle {
-                bottom: 20px; /* Смещаем кнопку вверх */
-                left: 20px; /* Смещаем кнопку вправо */
-            }
-
-            .container .bio {
-                font-size: 16px; /* Уменьшаем размер шрифта для биографии на мобильных устройствах */
-            }
-
-            .container .social-links {
-                margin-bottom: 20px; /* Уменьшаем отступ для социальных ссылок на мобильных устройствах */
-            }
-
-            .container p:last-child {
-                margin-bottom: 80px; /* Увеличиваем отступ снизу, чтобы не перекрывалась кнопка перевода */
+                width: 90%; /* Уменьшаем ширину контейнера на мобильных устройствах */
+                padding: 10px; /* Уменьшаем внутренние отступы */
             }
 
             .social-links a {
