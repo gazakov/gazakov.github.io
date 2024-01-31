@@ -136,6 +136,14 @@
         [data-lang]:not([data-lang-en]), [data-lang-en]:not([data-lang]) {
             opacity: 0;
         }
+
+        /* Медиа-запрос для мобильных устройств */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%; /* Уменьшаем максимальную ширину контейнера */
+                padding: 20px; /* Уменьшаем отступы */
+            }
+        }
     </style>
 </head>
 <body>
