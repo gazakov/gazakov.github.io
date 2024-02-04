@@ -10,15 +10,11 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
-            color: #333;
-            position: relative;
+            overflow: hidden; /* Отключаем прокрутку на всех устройствах */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-size: 20px;
-            overflow: hidden; /* Отключаем прокрутку на всех устройствах */
         }
 
         .background {
@@ -27,11 +23,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('background.jpg');
-            background-size: cover;
-            pointer-events: none;
-            z-index: -1;
-            transition: transform 0.3s ease;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4, #ffc0cb); /* Используем несколько цветов */
+            background-size: 200% 100%; /* Увеличиваем размер фона для создания эффекта переливания */
+            animation: gradientAnimation 15s linear infinite; /* Настраиваем анимацию */
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0 50%; /* Начальное положение градиента */
+            }
+            50% {
+                background-position: 100% 50%; /* Переход к половине анимации */
+            }
+            100% {
+                background-position: 0 50%; /* Конечное положение градиента */
+            }
         }
 
         .container {
@@ -179,6 +185,17 @@
                 margin-bottom: 70px; /* Увеличиваем отступ снизу, чтобы не перекрывалась кнопка перевода */
             }
         }
+
+        /* Стили для информационной панели */
+        .info-panel {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transform-style: preserve-3d; /* Включаем 3D-пространство для потомков */
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -187,7 +204,7 @@
 
 <div class="container">
     <div class="header">
-        <img src="https://sun9-60.userapi.com/impg/a5RkF1a4GbhlA9c1UunnX9NJZxukhPGtjn1dnQ/OsXoKCEmaDU.jpg?size=491x600&quality=96&sign=ef2e57eed71834795e5e562967150902&type=album" alt="Profile Picture">
+        <img src="https://media.discordapp.net/attachments/963100813541138493/1203776175554428989/20240202_192256.jpg?ex=65d252ed&is=65bfdded&hm=520a7a4f870adf05f072f34b1c10e30673e7905ff041e2c5a4cc40b4ad24d8e2&=&format=webp&width=653&height=871" alt="Profile Picture">
         <div class="name" data-lang="Глеб Газаков" data-lang-en="Gleb Gazakov">Глеб Газаков</div>
         <div class="bio" data-lang="Привет! Я занимаюсь программированием. Увлекаюсь философией и чтением литературы. Всегда рад общению!" data-lang-en="Hello! I am passionate about programming. My hobby is philosophy and reading literature. I am always open to communication!">
             Привет! Я занимаюсь программированием. <br> Увлекаюсь философией и чтением литературы. Всегда рад общению!
@@ -197,6 +214,12 @@
     <div class="social-links">
         <a href="https://t.me/wonderfulworldseen" target="_blank"><i class="fab fa-telegram"></i></a>
         <a href="about_me.html" class="info-btn"><i class="fas fa-info-circle"></i></a>
+    </div>
+
+    <!-- Информационная панель -->
+    <div class="info-panel">
+        <h2 data-lang="Информация о пользователе" data-lang-en="User Information">Информация о пользователе</h2>
+        <p data-lang="Глеб Газаков - программист с увлечением философией и чтением литературы." data-lang-en="Gleb Gazakov - programmer with passion for philosophy and literature reading.">Глеб Газаков - программист с увлечением философией и чтением литературы.</p>
     </div>
 </div>
 
