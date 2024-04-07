@@ -39,7 +39,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             object-fit: cover;
             object-position: center;
-            cursor: pointer; /* Добавлено свойство указателя для курсора */
+            cursor: pointer;
         }
 
         .bio, .name {
@@ -53,19 +53,18 @@
         }
 
         .social-links button {
-        font-size: 16px; /* Размер шрифта, чтобы соответствовать другим ссылкам */
-        margin: 0 10px; /* Отступы по бокам, чтобы соответствовать другим ссылкам */
-        background-color: transparent; /* Фон кнопки прозрачный */
-        border: none; /* Без рамки */
-        cursor: pointer; /* Форма курсора */
-        padding: 0; /* Паддинги, условно, как у других ссылок */
-        color: #ffffff; /* Цвет текста как у ссылок */
-}
+            font-size: 16px;
+            margin: 0 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            color: #ffffff;
+        }
 
         .social-links button:focus {
-    outline: none; /* Убрать контур фокуса для доступности */
-}
-
+            outline: none;
+        }
 
         .ascii-art {
             font-family: monospace;
@@ -78,7 +77,7 @@
             right: 20px;
             color: rgb(255, 255, 255);
             cursor: pointer;
-            z-index: 2; /* Increase the z-index to make it clickable */
+            z-index: 2;
         }
 
         .dark-theme {
@@ -87,39 +86,36 @@
         }
 
         .dark-theme .ascii-art, .dark-theme .header, .dark-theme .moon-art {
-            color: #121212; /* Color of the ASCII art, moon, and line for dark theme */
-            border-bottom-color: #121212; /* Color of the line for dark theme */
+            color: #121212;
+            border-bottom-color: #121212;
         }
 
         .sun {
-            color: #FDB813; /* Color of the sun */
+            color: #FDB813;
         }
 
-        /* Стили модального окна */
         .modal {
-            display: none; /* Скрыто по умолчанию */
-            position: fixed; /* Остается на месте при прокрутке */
-            z-index: 999; /* Выше всех других элементов */
+            display: none;
+            position: fixed;
+            z-index: 999;
             left: 0;
             top: 0;
-            width: 100%; /* Полная ширина */
-            height: 100%; /* Полная высота */
-            overflow: auto; /* Обеспечиваем прокрутку если нужно */
-            background-color: rgba(0, 0, 0, 0.9); /* Прозрачность фона */
-            align-items: center; /* Вертикальное выравнивание */
-            justify-content: center; /* Горизонтальное выравнивание */
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Стили изображения в модальном окне */
         .modal-content {
-            max-width: 90%; /* Максимальная ширина изображения */
-            max-height: 80vh; /* Максимальная высота изображения */
-            border-radius: 0; /* Сброс радиуса границ для изображения в модальном окне */
-            max-height: 80vh; /* ограничение по высоте, vh - процент от высоты экрана */
-            border-radius: 0; /* сброс радиуса границ для изображения в модальном окне */
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 0;
+            max-height: 80vh;
+            border-radius: 0;
         }
 
-        /* Стили крестика для закрытия */
         .close {
             position: absolute;
             top: 15px;
@@ -130,7 +126,6 @@
             cursor: pointer;
         }
 
-        /* Изменение цвета крестика при наведении */
         .close:hover,
         .close:focus {
             color: #bbb;
@@ -139,87 +134,79 @@
         }
 
         .skill-icon {
-        border-radius: 0; /* без округления углов */
-        width: 1200px; /* задаем ширину иконок */
-        background: none;
+            border-radius: 0;
+            width: 1200px;
+            background: none;
         }
 
         .skill-icon-mobile {
             display: none;
-}
+        }
 
-        /* Медиа-запрос для мобильных устройств */
         @media only screen and (max-width: 915px) {
             .skill-icon-desktop {
-                display: none; /* Скрыть десктопные иконки на мобильных устройствах */
+                display: none;
             }
             .skill-icon-mobile {
-                display: block !important; /* Показать мобильные иконки на мобильных устройствах */
-                width: 100%; /* Задайте рабочий процент или другую единицу измерения */
-                height: auto; /* Высота автоматически подстроится */
-
+                display: block !important;
+                width: 100%;
+                height: auto;
             }
         }
 
-
-
-        /* Добавим стили для ноутбуков с разрешением 1440x900 */
         @media only screen and (min-width: 1025px) and (max-width: 1440px) and (min-height: 801px) and (max-height: 900px) {
             body {
-                padding: 10px; /* Уменьшаем отступы для более узких экранов */
+                padding: 10px;
             }
             img {
-                width: 50%; /* Уменьшаем ширину изображения для узких экранов */
-                max-width: 500px; /* Устанавливаем максимальную ширину изображения */
-                max-height: 250px; /* Устанавливаем максимальную высоту изображения */
+                width: 50%;
+                max-width: 500px;
+                max-height: 250px;
             }
             .ascii-art {
-                font-size: 14px; /* Уменьшаем размер ASCII-арт для более узких экранов */
+                font-size: 14px;
             }
             .moon-art {
-                top: 10px; /* Сдвигаем ASCII-арт луны для более узких экранов */
-                right: 10px; /* Сдвигаем ASCII-арт луны для более узких экранов */
+                top: 10px;
+                right: 10px;
             }
         }
 
+        @media only screen and (max-width: 768px) {
+            .ascii-art {
+                display: none;
+            }
 
-        @media only screen and (max-width: 768px) { /* или используйте другой размер, например, для iPad используйте 1024px */
-    .ascii-art {
-        display: none; /* Скрываем основной ASCII-арт */
-    }
+            .mobile-art {
+                display: block !important;
+            }
 
-    .mobile-art {
-        display: block; /* Показываем ASCII-арт для мобильных устройств */
-    }
+            body {
+                overflow: auto;
+            }
 
-    body {
-        overflow: auto;
-    }
+            .ascii-art {
+                display: none;
+            }
 
-    .ascii-art {
-        display: none; /* Скрываем основной ASCII-арт */
-    }
+            .mobile-art {
+                display: block !important;
+            }
 
-    .mobile-art {
-        display: block !important; /* Показываем ASCII-арт для мобильных устройств */
-    }
+            .moon-art {
+                display: none !important;
+            }
 
-    .moon-art {
-        display: none !important; /* Скрываем ASCII-арт луны */
-    }
+            .tree-art {
+                display: none !important;
+            }
 
-    .tree-art {
-        display: none !important; /* Скрываем ASCII-арт дерева */
-    }
-
-    @media only screen and (max-width: 337px) {
-    html, body {
-        overflow-x: auto; /* Позволяет скроллировать по горизонтали если контент выходит за пределы экрана */
-    }
-    /* Здесь могут быть дополнительные стили, адаптирующие дизайн под маленький экран */
-}
-
-}
+            @media only screen and (max-width: 337px) {
+                html, body {
+                    overflow-x: auto;
+                }
+            }
+        }
 
     </style>
 </head>
@@ -269,10 +256,7 @@
 
         <p align="center">
             <section class="skills-section">
-                <!-- Иконки для десктопа (отображаются по умолчанию) -->
                 <img class="skill-icon skill-icon-desktop" src="https://skillicons.dev/icons?i=c,cpp,html,css,js,ts,nodejs,py,java,kotlin,lua,robloxstudio,windows,discord,bots,pr&perline=16" alt="Навыки"/>
-              
-                <!-- Иконки для мобильных устройств (скрыты по умолчанию) -->
                 <img class="skill-icon skill-icon-mobile" src="https://skillicons.dev/icons?i=c,cpp,html,css,js,ts,nodejs,py,java,kotlin,lua,robloxstudio,windows,discord,bots,pr&perline=6" alt="Навыки" style="display: none;"/>
               </section>
               
@@ -282,29 +266,24 @@
     </div>
 
     <div class="social-links">
-        <a href="https://t.me/fdfhjl32jw3ltr2jwkljfsdljkfdsklf" target="_blank">Telegram</a>
+        <a href="https://t.me/fdfhjl32jw3ltr2jwkljfs313dljkfds" target="_blank">Telegram</a>
         <a href="#" id="discordBtn">Discord</a>
     </div>
 </div>
 
-<!-- Модальное окно для полноразмерного изображения -->
 <div id="modal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
     <img id="modal-content" class="modal-content">
 </div>
 
 <script>
-
     document.addEventListener('DOMContentLoaded', function() {
-    // Функция копирования текста в буфер обмена
     function copyToClipboard(text) {
         navigator.clipboard.writeText(text)
             .then(() => {
                 const discordLink = document.getElementById('discordBtn');
                 const originalText = discordLink.textContent;
                 discordLink.textContent = 'Username copied!!';
-
-                // Возвращаем оригинальный текст через 5 секунд
                 setTimeout(() => {
                     discordLink.textContent = originalText;
                 }, 2000);
@@ -314,15 +293,12 @@
             });
     }
 
-    // Обработчик клика для ссылки Discord
     const discordBtn = document.getElementById('discordBtn');
     discordBtn.addEventListener('click', function(event) {
-        event.preventDefault(); // Предотвращаем действие по умолчанию
-        copyToClipboard('despacitopuetericko'); // Текст для копирования
+        event.preventDefault();
+        copyToClipboard('despacitopuetericko');
     });
 });
-
-
 
     function toggleTheme() {
     document.body.classList.toggle('dark-theme');
@@ -330,8 +306,6 @@
     asciiArt.classList.toggle('dark-theme');
     var moonArt = document.querySelector('.moon-art');
     moonArt.classList.toggle('dark-theme');
-
-    // Используем innerHTML для изменения содержимого лунного арта
     var moonText = document.querySelector('.moon-art pre');
     var sunText = `
            ;   :   ;
@@ -349,28 +323,21 @@
 function openModal(imageSrc) {
     var modal = document.getElementById("modal");
     var modalImg = document.getElementById("modal-content");
-
-    // Отключение прокрутки основного содержимого страницы
     document.body.style.overflow = 'hidden';
-
-    modal.style.display = "flex"; // Используйте "flex", а не "block"
+    modal.style.display = "flex";
     modalImg.src = imageSrc;
 }
 
 function closeModal() {
     var modal = document.getElementById("modal");
-
-    // Включение прокрутки основного содержимого страницы
     document.body.style.overflow = '';
-
     modal.style.display = "none";
-
 }
 
 </script>
 <pre>
     <div class="tree-art">
-    _{\ _{\{\/}/}/}___
+    _{\ _{\{\/}/}/}__
     {/{/\}{/{/\}(\}{/\} _
    {/{/\}{/{/\}(_)\}{/{/\}  _
 {\{/(\}\}{/{/\}\}{/){/\}\} /\}
@@ -393,8 +360,6 @@ _{\{/{\{/(_)\}/}{/{/{/\}\})\}{/\}
  _...--"   .-'   |'-.-'|  ' -.  ""--..__
 -"    ' .  . '    |.'-._| '  . .  '   
  .  '-  '    .--'  | '-.'|    .  '  . '
-   ' ..     |'-_.-|
- .  '  .       _.-|-._ -|-._  .  '  .
       .'   |'- .-|   '.
 ..-'   ' .  '.   `-._.-    .'  '  - .
                                                .-' '        '-._______.-'     '  .                                             
