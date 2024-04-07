@@ -1,303 +1,405 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя биография</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>My Biography</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Отключаем прокрутку на всех устройствах */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, #8cff91, #bdf2d3, #b1ffb8); /* Используем несколько цветов */
-            background-size: 200% 100%; /* Увеличиваем размер фона для создания эффекта переливания */
-            animation: gradientAnimation 15s linear infinite; /* Настраиваем анимацию */
-        }
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0 50%; /* Начальное положение градиента */
-            }
-            50% {
-                background-position: 100% 50%; /* Переход к половине анимации */
-            }
-            100% {
-                background-position: 0 50%; /* Конечное положение градиента */
-            }
-        }
-
-        .container {
-            max-width: 600px; /* Возвращаем максимальную ширину контейнера на компьютере */
-            padding: 40px; /* Возвращаем отступы на компьютере */
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #121212;
+            color: rgb(255, 255, 255);
+            font-family: monospace;
             text-align: center;
+            padding: 20px;
+            max-width: 1440px;
+            margin: auto;
             position: relative;
-            z-index: 1;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: slideIn 1s forwards, fadeIn 1s forwards;
-            margin-bottom: 20px; /* Новый стиль: уменьшаем отступ снизу */
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .header img {
-            border-radius: 50%;
-            margin-bottom: 20px; /* Уменьшаем отступ снизу для изображения профиля */
-            width: 200px; /* Возвращаем размер изображения профиля на компьютере */
-            height: 200px;
-            object-fit: cover;
-            border: 5px solid #fff; /* Возвращаем толщину рамки на компьютере */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Возвращаем тень на компьютере */
-        }
-
-        .name {
-            font-size: 36px; /* Возвращаем размер имени на компьютере */
-            color: #800080;
+        .header {
+            border-bottom: 2px solid rgb(255, 255, 255);
+            padding-bottom: 20px;
             margin-bottom: 20px;
-            transition: opacity 0.5s ease;
-        }
-
-        .bio {
-            font-size: 24px; /* Возвращаем размер текста биографии на компьютере */
-            margin-bottom: 40px;
-            transition: opacity 0.5s ease;
         }
 
         .social-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+
+        .lang-toggle {
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        img {
+            border-radius: 50%;
+            margin-bottom: 20px;
+            width: 27%;
+            max-height: 300px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            object-position: center;
+            cursor: pointer; /* Добавлено свойство указателя для курсора */
+        }
+
+        .bio, .name {
+            font-size: 18px;
+            line-height: 1.5;
         }
 
         .social-links a {
-            font-size: 80px; /* Возвращаем размер иконок социальных сетей на компьютере */
-            color: #007bff;
-            margin: 0 30px;
-            transition: transform 0.3s ease;
+            font-size: 16px;
+            margin: 0 10px;
         }
 
-        .social-links a:hover {
-            transform: scale(1.2);
+        .social-links button {
+        font-size: 16px; /* Размер шрифта, чтобы соответствовать другим ссылкам */
+        margin: 0 10px; /* Отступы по бокам, чтобы соответствовать другим ссылкам */
+        background-color: transparent; /* Фон кнопки прозрачный */
+        border: none; /* Без рамки */
+        cursor: pointer; /* Форма курсора */
+        padding: 0; /* Паддинги, условно, как у других ссылок */
+        color: #ffffff; /* Цвет текста как у ссылок */
+}
+
+        .social-links button:focus {
+    outline: none; /* Убрать контур фокуса для доступности */
+}
+
+
+        .ascii-art {
+            font-family: monospace;
+            color: rgb(255, 255, 255);
         }
 
-        /* Стили для кнопки переключения языка */
-        .lang-toggle {
-            position: fixed;
-            bottom: 40px;
-            left: 40px;
+        .moon-art {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: rgb(255, 255, 255);
             cursor: pointer;
-            z-index: 9999;
-            width: 60px; /* Adjusted width */
-            height: 60px; /* Adjusted height */
-            background-color: #fff;
-            border-radius: 50%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease, opacity 1s ease;
-            overflow: hidden;
-            opacity: 0;
-            border: 3px solid #fff; /* Add white border */
+            z-index: 2; /* Increase the z-index to make it clickable */
         }
 
-        .lang-toggle i {
-            font-size: 36px;
-            color: #007bff;
-            transition: transform 0.3s ease;
+        .dark-theme {
+            background-color: #ffffff;
+            color: #121212;
         }
 
-        .lang-toggle:hover {
-            transform: scale(1.1);
-            width: 65px; /* Adjusted width */
-            height: 65px; /* Adjusted height */
+        .dark-theme .ascii-art, .dark-theme .header, .dark-theme .moon-art {
+            color: #121212; /* Color of the ASCII art, moon, and line for dark theme */
+            border-bottom-color: #121212; /* Color of the line for dark theme */
         }
 
-        /* Добавляем анимацию для кнопки переключения языка только при загрузке */
-        .lang-toggle.animating:hover {
-            transform: scale(1.1);
-            width: 65px; /* Adjusted width */
-            height: 65px; /* Adjusted height */
+        .sun {
+            color: #FDB813; /* Color of the sun */
         }
 
-        /* Скрываем анимацию вращения для иконки при наведении */
-        .lang-toggle i:hover {
-            transform: none;
+        /* Стили модального окна */
+        .modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed; /* Остается на месте при прокрутке */
+            z-index: 999; /* Выше всех других элементов */
+            left: 0;
+            top: 0;
+            width: 100%; /* Полная ширина */
+            height: 100%; /* Полная высота */
+            overflow: auto; /* Обеспечиваем прокрутку если нужно */
+            background-color: rgba(0, 0, 0, 0.9); /* Прозрачность фона */
+            align-items: center; /* Вертикальное выравнивание */
+            justify-content: center; /* Горизонтальное выравнивание */
         }
 
-        /* Плавный переход для текста */
-        [data-lang], [data-lang-en] {
-            transition: opacity 0.5s ease;
-            opacity: 1;
+        /* Стили изображения в модальном окне */
+        .modal-content {
+            max-width: 90%; /* Максимальная ширина изображения */
+            max-height: 80vh; /* Максимальная высота изображения */
+            border-radius: 0; /* Сброс радиуса границ для изображения в модальном окне */
+            max-height: 80vh; /* ограничение по высоте, vh - процент от высоты экрана */
+            border-radius: 0; /* сброс радиуса границ для изображения в модальном окне */
         }
 
-        [data-lang]:not([data-lang-en]), [data-lang-en]:not([data-lang]) {
-            opacity: 0;
+        /* Стили крестика для закрытия */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
         }
+
+        /* Изменение цвета крестика при наведении */
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .skill-icon {
+        border-radius: 0; /* без округления углов */
+        width: 1200px; /* задаем ширину иконок */
+        background: none;
+        }
+
+        .skill-icon-mobile {
+            display: none;
+}
 
         /* Медиа-запрос для мобильных устройств */
-        @media (max-width: 768px) {
-            .container {
-                max-width: 90%; /* Уменьшаем максимальную ширину контейнера */
-                padding: 10px; /* Уменьшаем отступы */
+        @media only screen and (max-width: 915px) {
+            .skill-icon-desktop {
+                display: none; /* Скрыть десктопные иконки на мобильных устройствах */
             }
+            .skill-icon-mobile {
+                display: block !important; /* Показать мобильные иконки на мобильных устройствах */
+                width: 100%; /* Задайте рабочий процент или другую единицу измерения */
+                height: auto; /* Высота автоматически подстроится */
 
-            .lang-toggle {
-                bottom: 20px; /* Смещаем кнопку вверх */
-                left: 20px; /* Смещаем кнопку вправо */
-            }
-
-            .container p:last-child {
-                margin-bottom: 20px; /* Уменьшаем отступ снизу, чтобы не перекрывалась кнопка перевода */
-            }
-
-            .header img {
-                width: 150px; /* Reduce profile image size for smaller screens */
-                height: 150px;
-            }
-
-            .name {
-                font-size: 24px; /* Decrease font size for name */
-                margin-bottom: 10px; /* Adjust spacing */
-            }
-
-            .bio {
-                font-size: 18px; /* Decrease font size for biography */
-                margin-bottom: 20px; /* Adjust spacing */
-            }
-
-            .social-links {
-                margin-bottom: 20px; /* Adjust spacing */
-            }
-
-            .social-links a {
-                font-size: 60px; /* Increase icon size for social links on mobile */
-                color: #007bff; /* Set color to blue */
-                margin: 0 15px; /* Adjust spacing */
-            }
-
-            .info-panel {
-                padding: 10px; /* Adjust padding for smaller screens */
-            }
-
-            .info-panel h2 {
-                font-size: 24px; /* Decrease font size for heading */
-                margin-bottom: 10px; /* Adjust spacing */
-            }
-
-            .info-panel p {
-                font-size: 16px; /* Decrease font size for paragraph */
-                margin-bottom: 0; /* Adjust spacing */
             }
         }
 
-        /* Стили для информационной панели */
-        .info-panel {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            transform-style: preserve-3d; /* Включаем 3D-пространство для потомков */
-            position: relative;
-            z-index: 1;
+
+
+        /* Добавим стили для ноутбуков с разрешением 1440x900 */
+        @media only screen and (min-width: 1025px) and (max-width: 1440px) and (min-height: 801px) and (max-height: 900px) {
+            body {
+                padding: 10px; /* Уменьшаем отступы для более узких экранов */
+            }
+            img {
+                width: 50%; /* Уменьшаем ширину изображения для узких экранов */
+                max-width: 500px; /* Устанавливаем максимальную ширину изображения */
+                max-height: 250px; /* Устанавливаем максимальную высоту изображения */
+            }
+            .ascii-art {
+                font-size: 14px; /* Уменьшаем размер ASCII-арт для более узких экранов */
+            }
+            .moon-art {
+                top: 10px; /* Сдвигаем ASCII-арт луны для более узких экранов */
+                right: 10px; /* Сдвигаем ASCII-арт луны для более узких экранов */
+            }
         }
+
+
+        @media only screen and (max-width: 768px) { /* или используйте другой размер, например, для iPad используйте 1024px */
+    .ascii-art {
+        display: none; /* Скрываем основной ASCII-арт */
+    }
+
+    .mobile-art {
+        display: block; /* Показываем ASCII-арт для мобильных устройств */
+    }
+
+    body {
+        overflow: auto;
+    }
+
+    .ascii-art {
+        display: none; /* Скрываем основной ASCII-арт */
+    }
+
+    .mobile-art {
+        display: block !important; /* Показываем ASCII-арт для мобильных устройств */
+    }
+
+    .moon-art {
+        display: none !important; /* Скрываем ASCII-арт луны */
+    }
+
+    .tree-art {
+        display: none !important; /* Скрываем ASCII-арт дерева */
+    }
+
+    @media only screen and (max-width: 337px) {
+    html, body {
+        overflow-x: auto; /* Позволяет скроллировать по горизонтали если контент выходит за пределы экрана */
+    }
+    /* Здесь могут быть дополнительные стили, адаптирующие дизайн под маленький экран */
+}
+
+}
+
     </style>
 </head>
 <body>
-
-
-
-<div class="background"></div>
+<div class="moon-art" onclick="toggleTheme()">
+<pre>
+        _.._
+       .' .-'`
+      /   /
+      |   |
+      \   \
+        '._'-._
+          ```
+</pre>
+</div>
+<img src="https://sun9-37.userapi.com/impg/kpIRhoFwnARrH0iG3YaTl0JhQ9rfy9ja5wvUMA/8iOWn5EYxeg.jpg?size=1620x2160&quality=95&sign=5dbab976e6dbf810b6c5f523ac26a5af&type=album" alt="Profile Image" style="width: 300px;" onclick="openModal(this.src);">
+<div class="ascii-art">
+<pre class="wave">
+                                                                                                                                                                                                                                   
+    ________  ___       _______   ________          ________  ________  ________  ________  ___  __    ________  ___      ___ 
+    |\   ____\|\  \     |\  ___ \ |\   __  \        |\   ____\|\   __  \|\_____  \|\   __  \|\  \|\  \ |\   __  \|\  \    /  /|
+    \ \  \___|\ \  \    \ \   __/|\ \  \|\ /_       \ \  \___|\ \  \|\  \\|___/  /\ \  \|\  \ \  \/  /|\ \  \|\  \ \  \  /  / /
+     \ \  \  __\ \  \    \ \  \_|/_\ \   __  \       \ \  \  __\ \   __  \   /  / /\ \   __  \ \   ___  \ \  \\\  \ \  \/  / / 
+      \ \  \|\  \ \  \____\ \  \_|\ \ \  \|\  \       \ \  \|\  \ \  \ \  \ /  /_/__\ \  \ \  \ \  \\ \  \ \  \\\  \ \    / /  
+       \ \_______\ \_______\ \_______\ \_______\       \ \_______\ \__\ \__\\________\ \__\ \__\ \__\\ \__\ \_______\ \__/ /   
+        \|_______|\|_______|\|_______|\|_______|        \|_______|\|__|\|__|\|_______|\|__|\|__|\|__| \|__|\|_______|\|__|/    
+                                                                                                                               
+                                                                                                                                                                                         
+</pre>
+</div>
+<div class="mobile-art" style="display: none;">
+    <pre class="wave">
+    ________  ___       _______   ________     
+    |\   ____\|\  \     |\  ___ \ |\   __  \    
+    \ \  \___|\ \  \    \ \   __/|\ \  \|\ /_   
+    \ \  \  __\ \  \    \ \  \_|/_\ \   __  \  
+    \ \  \|\  \ \  \____\ \  \_|\ \ \  \|\  \ 
+    \ \_______\ \_______\ \_______\ \_______\
+    \|_______|\|_______|\|_______|\|_______|
+                                            
+    </pre>
+</div>
 
 <div class="container">
     <div class="header">
-        <img src="https://sun9-37.userapi.com/impg/kpIRhoFwnARrH0iG3YaTl0JhQ9rfy9ja5wvUMA/8iOWn5EYxeg.jpg?size=1620x2160&quality=95&sign=5dbab976e6dbf810b6c5f523ac26a5af&type=album" alt="потом фото добавлю">
-        <div class="name" data-lang="Глеб Газаков" data-lang-en="Gleb Gazakov">Глеб Газаков</div>
-        <div class="bio" data-lang="Привет! Я занимаюсь программированием. Увлекаюсь философией и чтением литературы. Всегда рад общению!" data-lang-en="Hello! I am passionate about programming. My hobby is philosophy and reading literature. I am always open to communication!">
-            Привет! Я занимаюсь программированием. <br> Увлекаюсь философией и чтением литературы. Всегда рад общению!
-        </div>
+        <div class="bio">Hello! I am passionate about programming. My hobby is philosophy and reading literature. I am always open to communication!</div>
+
+        <p align="center">
+            <section class="skills-section">
+                <!-- Иконки для десктопа (отображаются по умолчанию) -->
+                <img class="skill-icon skill-icon-desktop" src="https://skillicons.dev/icons?i=c,cpp,html,css,js,ts,nodejs,py,java,kotlin,lua,robloxstudio,windows,discord,bots,pr&perline=16" alt="Навыки"/>
+              
+                <!-- Иконки для мобильных устройств (скрыты по умолчанию) -->
+                <img class="skill-icon skill-icon-mobile" src="https://skillicons.dev/icons?i=c,cpp,html,css,js,ts,nodejs,py,java,kotlin,lua,robloxstudio,windows,discord,bots,pr&perline=6" alt="Навыки" style="display: none;"/>
+              </section>
+              
+            </a>
+        </p>        
+
     </div>
 
     <div class="social-links">
-        <a href="https://t.me/fdfhjl32jw3ltr2jwkljfsdljkfdsklf" target="_blank"><i class="fab fa-telegram"></i></a>
-        <a href="about_me.html" class="info-btn"><i class="fas fa-info-circle"></i></a>
-    </div>
-
-   <!-- Информационная панель -->
-    <div class="info-panel">
-        <h2 data-lang="Информация о пользователе" data-lang-en="User Information">Информация о пользователе</h2>
-        <p data-lang="Глеб Газаков - программист с увлечением философией и чтением литературы." data-lang-en="Gleb Gazakov - programmer with passion for philosophy and literature reading.">Глеб Газаков - программист с увлечением философией и чтением литературы.</p>
+        <a href="https://t.me/fdfhjl32jw3ltr2jwkljfsdljkfdsklf" target="_blank">Telegram</a>
+        <a href="#" id="discordBtn">Discord</a>
     </div>
 </div>
-    
-<div class="lang-toggle" onclick="toggleLanguage()"><i class="fas fa-language"></i></div>
+
+<!-- Модальное окно для полноразмерного изображения -->
+<div id="modal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img id="modal-content" class="modal-content">
+</div>
 
 <script>
-    function toggleLanguage() {
-        var currentLang = document.documentElement.lang;
-        var elementsToTranslate = document.querySelectorAll('[data-lang]');
 
-        if (currentLang === 'en') {
-            document.documentElement.lang = 'ru';
-            elementsToTranslate.forEach(function(element) {
-                element.style.opacity = '0';
-                setTimeout(function() {
-                    element.innerText = element.getAttribute('data-lang');
-                    element.style.opacity = '1';
-                }, 500);
+    document.addEventListener('DOMContentLoaded', function() {
+    // Функция копирования текста в буфер обмена
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                const discordLink = document.getElementById('discordBtn');
+                const originalText = discordLink.textContent;
+                discordLink.textContent = 'Username copied!!';
+
+                // Возвращаем оригинальный текст через 5 секунд
+                setTimeout(() => {
+                    discordLink.textContent = originalText;
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Произошла ошибка:', err);
             });
-        } else {
-            document.documentElement.lang = 'en';
-            elementsToTranslate.forEach(function(element) {
-                element.style.opacity = '0';
-                setTimeout(function() {
-                    element.innerText = element.getAttribute('data-lang-en');
-                    element.style.opacity = '1';
-                }, 500);
-            });
-        }
     }
 
-    window.addEventListener('DOMContentLoaded', function() {
-        var langToggle = document.querySelector('.lang-toggle');
-        langToggle.style.opacity = '1';
+    // Обработчик клика для ссылки Discord
+    const discordBtn = document.getElementById('discordBtn');
+    discordBtn.addEventListener('click', function(event) {
+        event.preventDefault(); // Предотвращаем действие по умолчанию
+        copyToClipboard('despacitopuetericko'); // Текст для копирования
     });
-</script>
+});
 
+
+
+    function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+    var asciiArt = document.querySelector('.ascii-art');
+    asciiArt.classList.toggle('dark-theme');
+    var moonArt = document.querySelector('.moon-art');
+    moonArt.classList.toggle('dark-theme');
+
+    // Используем innerHTML для изменения содержимого лунного арта
+    var moonText = document.querySelector('.moon-art pre');
+    var sunText = `
+           ;   :   ;
+   .   \\_,!,_/   ,
+    \`.,'     \`.,'
+     /         \\
+   ~ -- :           : -- ~
+     \\         /
+    ,'\\._   _./','
+   '   / \`!\\\`   \`
+      ;   :   ;  `;
+    moonText.innerHTML = document.body.classList.contains('dark-theme') ? sunText.trim() : '        _.._<br>       .\' .-\'`<br>      /   /<br>      |   |<br>      \\   \\<br>        \'._\'-._<br>          ```';
+}
+
+function openModal(imageSrc) {
+    var modal = document.getElementById("modal");
+    var modalImg = document.getElementById("modal-content");
+
+    // Отключение прокрутки основного содержимого страницы
+    document.body.style.overflow = 'hidden';
+
+    modal.style.display = "flex"; // Используйте "flex", а не "block"
+    modalImg.src = imageSrc;
+}
+
+function closeModal() {
+    var modal = document.getElementById("modal");
+
+    // Включение прокрутки основного содержимого страницы
+    document.body.style.overflow = '';
+
+    modal.style.display = "none";
+
+}
+
+</script>
+<pre>
+    <div class="tree-art">
+    _{\ _{\{\/}/}/}__
+    {/{/\}{/{/\}(\}{/\} _
+   {/{/\}{/{/\}(_)\}{/{/\}  _
+{\{/(\}\}{/{/\}\}{/){/\}\} /\}
+{/{/(_)/}{\{/)\}{\(_){/}/}/}/}
+_{\{/{/{\{/{/(_)/}/}/}{\(/}/}/}
+{/{/{\{\{\(/}{\{\/}/}{\}(_){\/}\}
+_{\{/{\{/(_)\}/}{/{/{/\}\})\}{/\}
+{/{/{\{\(/}{/{\{\{\/})/}{\(_)/}/}\}
+{\{\/}(_){\{\{\/}/}(_){\/}{\/}/})/}
+{/{\{\/}{/{\{\{\/}/}{\{\/}/}\}(_)
+{/{\{\/}{/){\{\{\/}/}{\{\(/}/}\}/}
+{/{\{\/}(_){\{\{\(/}/}{\(_)/}/}\}
+{/({/{\{/{\{\/}(_){\/}/}\}/}(\}
+ (_){/{\/}{\{\/}/}{\{\)/}/}(_)
+   {/{/{\{\/}{/{\{\{\(_)/}
+    {/{\{\{\/}/}{\{\\}/}
+     {){/ {\/}{\/} \}\}
+     (_)  \.-'.-/
+ __...--- |'-.-'| --...__
+ _...--"   .-'   |'-.-'|  ' -.  ""--..__
+-"    ' .  . '    |.'-._| '  . .  '   
+ .  '-  '    .--'  | '-.'|    .  '  . '
+   ' ..     |'-_.-|
+ .  '  .       _.-|-._ -|-._  .  '  .
+      .'   |'- .-|   '.
+..-'   ' .  '.   `-._.-    .'  '  - .
+                                               .-' '        '-._______.-'     '  .                                             
+        </pre>
+    </div>             
+</pre>
 </body>
 </html>
