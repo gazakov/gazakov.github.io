@@ -29,6 +29,7 @@ Social media and contact details are provided for ease of connection. An interac
 ## Usage
 
 Interested in using a similar design or contributing to this project? Feel free to clone the repository and explore the code:
+
 `git clone https://github.com/gazakov/bio.git`
 
 ## Contact
