@@ -14,7 +14,7 @@ Welcome to the repository for my personal biography website. This project is a s
 To add a personal and retro touch to the website, I've included ASCII art in several places:
 
 - The moon/sun art serves as a theme toggle button.
-- The wave art adds a whimsical backdrop.
+- The name art adds a whimsical backdrop.
 
 ASCII art conveys my enthusiasm for classic computing aesthetics and creates a memorable visual identity for the website.
 
