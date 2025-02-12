@@ -335,7 +335,7 @@
             .then(() => {
                 const discordLink = document.getElementById('discordBtn');
                 const originalText = discordLink.textContent;
-                discordLink.textContent = 'I'm banned on Discord.';
+                discordLink.textContent = 'I\'m banned on Discord.';
                 setTimeout(() => {
                     discordLink.textContent = originalText;
                 }, 2000);
@@ -348,7 +348,7 @@
     const discordBtn = document.getElementById('discordBtn');
     discordBtn.addEventListener('click', function(event) {
         event.preventDefault();
-        copyToClipboard('I'm banned on Discord :/');
+        copyToClipboard('I\'m banned on Discord :/');
     });
 });
 
@@ -387,7 +387,5 @@ function closeModal() {
 }
 
 </script>
-    </div>             
-</pre>
 </body>
 </html>
