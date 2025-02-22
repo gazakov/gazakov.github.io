@@ -14,6 +14,7 @@
             max-width: 1440px;
             margin: auto;
             position: relative;
+            overflow-x: hidden;
         }
 
         html, body {
@@ -233,14 +234,6 @@
                 overflow: auto;
             }
 
-            .ascii-art {
-                display: none;
-            }
-
-            .mobile-art {
-                display: block !important;
-            }
-
             .moon-art {
                 display: none !important;
             }
@@ -251,9 +244,34 @@
 
             @media only screen and (max-width: 337px) {
                 html, body {
-                    overflow-x: auto;
+                    overflow-x: hidden;
                 }
             }
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media screen and (min-width: 2560px) {
+            .container {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            
+            .content {
+                transform: scale(1.2);
+            }
+        }
+
+        .ascii-art pre {
+            max-width: 100%;
+            overflow-x: hidden;
+            white-space: pre;
         }
 
     </style>
@@ -270,7 +288,12 @@
           ```
 </pre>
 </div>
-<img src="https://sun9-37.userapi.com/impg/kpIRhoFwnARrH0iG3YaTl0JhQ9rfy9ja5wvUMA/n3ybrMeabyI.jpg?size=1620x2160&quality=95&sign=ed4432afd477a600d379586c52f43b6d&type=album" alt="Profile Image" style="width: 300px;" onclick="openModal(this.src);">
+<img 
+  src="https://sun9-34.userapi.com/impg/Ul1wRGZzNiOLD1OnB7KhwX3STe0HHbGA5ErTjg/gMxvI-0tPhs.jpg?size=1620x2160&quality=95&sign=5f7866664f8299851e38d5b1372ae459&type=album"
+  class="profile-image"
+  alt="Profile photo"
+  onclick="openModal(this.src)"
+/>
 <div class="ascii-art">
 <pre class="wave">
                                                                                                                                                                                                                                    
@@ -287,11 +310,11 @@
 </div>
 <div class="mobile-art" style="display: none;">
     <pre class="wave">
-    ________  ___       _______   ________     
-    |\   ____\|\  \     |\  ___ \ |\   __  \    
-    \ \  \___|\ \  \    \ \   __/|\ \  \|\ /_   
-    \ \  \  __\ \  \    \ \  \_|/_\ \   __  \  
-    \ \  \|\  \ \  \____\ \  \_|\ \ \  \|\  \ 
+    ________  ___       _______   ________
+    |\   ____\|\  \     |\  ___ \ |\   __  \
+    \ \  \___|\ \  \    \ \   __/|\ \  \|\ /_
+    \ \  \  __\ \  \    \ \  \_|/_\ \   __  \
+    \ \  \|\  \ \  \____\ \  \_|\ \ \  \|\  \
     \ \_______\ \_______\ \_______\ \_______\
     \|_______|\|_______|\|_______|\|_______|
                                             
@@ -300,17 +323,13 @@
 
 <div class="container">
     <div class="header">
-        <div class="bio">Hello! I am passionate about programming. My hobby is philosophy and reading literature. I am always open to communication!</div>
+        <div class="bio">Hello! I am passionate about programming and computer science at all. My hobby is reading literature. I am always open to communication!</div>
 
         <p align="center">
             <section class="skills-section">
-                <a href="https://skillicons.dev"></a>
                 <img class="skill-icon skill-icon-desktop" src="https://skillicons.dev/icons?i=c,cpp,html,css,js,ts,nodejs,py,java,kotlin,lua,linux&perline=16" alt="Навыки"/>
                 <img class="skill-icon skill-icon-mobile" src="https://skillicons.dev/icons?i=c,cpp,html,css,js,ts,nodejs,py,java,kotlin,lua,linux&perline=6" alt="Навыки" style="display: none;"/>
-
-              </section>
-              
-            </a>
+            </section>
         </p>        
 
     </div>
