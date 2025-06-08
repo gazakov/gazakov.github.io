@@ -335,6 +335,8 @@
     </div>
 
     <div class="social-links">
+        <a href="https://github.com/gazakov" target="_blank" style="color: #6395ec;">GitHub</a>
+        <a href="https://www.youtube.com/@gazakov/videos" target="_blank" style="color: #6395ec;">YouTube</a>
         <a href="https://t.me/pomnikii" target="_blank" style="color: #6395ec;">Telegram</a>
         <a href="#" id="discordBtn" style= "color: #6395ec;">Discord</a>
         <a href="https://gazakov.bandcamp.com/" target="_blank" style="color: #6395ec;">Bandcamp</a>
@@ -389,6 +391,25 @@
    '   / \`!\\\`   \`
       ;   :   ;  `;
     moonText.innerHTML = document.body.classList.contains('dark-theme') ? sunText.trim() : '        _.._<br>       .\' .-\'`<br>      /   /<br>      |   |<br>      \\   \\<br>        \'._\'-._<br>          ```';
+    
+    const isLightTheme = document.body.classList.contains('dark-theme');
+    const skillIconDesktop = document.querySelector('.skill-icon-desktop');
+    const skillIconMobile = document.querySelector('.skill-icon-mobile');
+    
+    let desktopSrc = skillIconDesktop.src;
+    let mobileSrc = skillIconMobile.src;
+
+    if (isLightTheme) {
+        if (!desktopSrc.includes('&theme=light')) {
+            skillIconDesktop.src = desktopSrc + "&theme=light";
+        }
+        if (!mobileSrc.includes('&theme=light')) {
+            skillIconMobile.src = mobileSrc + "&theme=light";
+        }
+    } else {
+        skillIconDesktop.src = desktopSrc.replace("&theme=light", "");
+        skillIconMobile.src = mobileSrc.replace("&theme=light", "");
+    }
 }
 
 function openModal(imageSrc) {
